@@ -1,0 +1,19 @@
+<div class="casino-container">
+  <h2>🎰 კოდის კაზინო</h2>
+  <p class="points">ქულები: <strong>{{ points }}</strong></p>
+
+  <app-loader *ngIf="loading"></app-loader>
+
+  <div *ngIf="!loading && snippet">
+    <p class="instruction">აირჩიე სწორი კოდი:</p>
+    <p class="message">{{ message }}</p>
+
+    <div *ngFor="let choice of choices" class="code-option" (click)="choose(choice)">
+      <pre>{{ choice }}</pre>
+    </div>
+    <div *ngIf="message">
+      <button (click)="loadNewChallenge()"> შემდეგი ➡</button>
+    </div>
+  </div>
+
+</div>

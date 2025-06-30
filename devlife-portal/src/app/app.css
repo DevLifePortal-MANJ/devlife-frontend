@@ -1,0 +1,20 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 260px; 
+  transition: margin-left 0.3s ease;
+  overflow-X: hidden;
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+  overflow: hidden;
+}

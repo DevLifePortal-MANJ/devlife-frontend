@@ -1,0 +1,9 @@
+<h2>🏃‍♂️ გაექეცი შეხვედრას</h2>
+    <select [(ngModel)]="category">
+      <option value="standup">Daily Standup</option>
+      <option value="sprint">Sprint Planning</option>
+      <option value="client">Client Meeting</option>
+      <option value="team">Team Building</option>
+    </select>
+    <button (click)="generateExcuse()">საბაბის გენერაცია</button>
+    <p *ngIf="excuse">📢 {{ excuse }}</p>

@@ -1,0 +1,9 @@
+<router-outlet *ngIf="isAuthRoute()"></router-outlet>
+
+<div class="app-layout" *ngIf="!isAuthRoute()">
+  <app-navigation (collapsedChange)="onSidebarToggle($event)"></app-navigation>
+  <main class="main-content" [style.marginLeft.px]="isSidebarCollapsed ? 80 : 260">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+<app-particles></app-particles>

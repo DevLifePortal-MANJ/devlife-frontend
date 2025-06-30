@@ -1,0 +1,6 @@
+<div class="container">
+    <h2>🔍 კოდის ანალიზატორი</h2>
+    <input [(ngModel)]="githubUrl" placeholder="შეიყვანე GitHub Repo URL" />
+    <button (click)="analyzeCode()">ანალიზი</button>
+    <p *ngIf="result">{{ result }}</p>
+</div>

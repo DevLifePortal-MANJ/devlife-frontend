@@ -1,0 +1,25 @@
+<nav class="sidebar" [class.collapsed]="isCollapsed">
+  <div class="toggle-btn" (click)="toggleSidebar()">
+    <span [innerHTML]="isCollapsed ? '&#9654;' : '&#9664;'"></span>
+  </div>
+
+  <div class="logo">
+    <button routerLink="/dashboard"><span [innerHTML]="isCollapsed ? 'DL ' : 'DevLife🚀 '"></span></button>
+  </div>
+
+  <ul class="nav-links">
+    <li><button routerLink="/casino"><span class="icon">🎰</span><span class="text" *ngIf="!isCollapsed">კოდის კაზინო</span></button></li>
+    <li><button routerLink="/roast"><span class="icon">🔥</span><span class="text" *ngIf="!isCollapsed">კოდის როუსტი</span></button></li>
+    <li><button routerLink="/bug-chase"><span class="icon">🏃</span><span class="text" *ngIf="!isCollapsed">Bug Chase</span></button></li>
+    <li><button routerLink="/analyzer"><span class="icon">🔍</span><span class="text" *ngIf="!isCollapsed">კოდის ანალიზატორი</span></button></li>
+    <li><button routerLink="/dating"><span class="icon">💑</span><span class="text" *ngIf="!isCollapsed">Dev Dating Room</span></button></li>
+    <li><button routerLink="/escape"><span class="icon">🏃‍♂️</span><span class="text" *ngIf="!isCollapsed">გაექეცი შეხვედრას</span></button></li>
+  </ul>
+
+  <div class="bottom-section">
+    <button class="logout" (click)="logout()">
+      <span class="icon">🚪</span>
+      <span class="text" *ngIf="!isCollapsed">გასვლა</span>
+    </button>
+  </div>
+</nav>

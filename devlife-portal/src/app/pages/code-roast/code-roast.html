@@ -1,0 +1,22 @@
+<div class="code-roast-page">
+  <div class="assignment-container">
+    <h2>დავალება</h2>
+    <p>{{ challenge.task }}</p>
+  </div>
+
+  <div class="editor-panel">
+    <app-monaco-editor
+      [code]="userCode"
+      (codeChange)="userCode = $event"
+      [language]="'javascript'"
+    ></app-monaco-editor>
+
+
+    <div *ngIf="showRoast">
+      <p>{{ roastMessage }}</p>
+    </div>
+
+  </div>
+  <button (click)="submit()">🔍 შეამოწმე</button>
+
+</div>

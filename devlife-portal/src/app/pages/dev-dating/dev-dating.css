@@ -1,0 +1,83 @@
+:host {
+  color: #f9fafb;
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+h2 {
+  color: #fbbf24;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+  color: #bad0f3;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+button {
+  background-color: #4f46e5;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50%;
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  user-select: none;
+  box-shadow: 0 3px 6px rgba(79, 70, 229, 0.4);
+}
+
+button:hover {
+  background-color: #4338ca;
+  transform: scale(1.1);
+}
+
+p[ng-reflect-ng-if="true"] {
+  font-size: 1.25rem;
+  color: #ef4444;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+input, select, textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+.swipe-card {
+  background: #334155;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  user-select: none;
+  touch-action: pan-y;
+}

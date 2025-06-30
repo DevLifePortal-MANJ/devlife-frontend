@@ -1,0 +1,41 @@
+<h2>რეგისტრაცია</h2>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <label>მომხმარებლის სახელი:</label>
+  <input type="text" formControlName="username" />
+
+  <label>სახელი:</label>
+  <input type="text" formControlName="firstName" />
+
+  <label>გვარი:</label>
+  <input type="text" formControlName="lastName" />
+
+  <label>დაბადების თარიღი:</label>
+  <input type="date" formControlName="birthDate" />
+
+  <label>ტექნოლოგიური Stack:</label>
+  <select formControlName="techStack">
+    <option value="React">React</option>
+    <option value="Angular">Angular</option>
+    <option value="Vue">Vue</option>
+    <option value=".NET">.NET</option>
+    <option value="Python">Python</option>
+  </select>
+
+
+  <label>გამოცდილების დონე:</label>
+  <select formControlName="experience">
+    <option value="Junior">Junior</option>
+    <option value="Middle">Middle</option>
+    <option value="Senior">Senior</option>
+  </select>
+
+  <button type="submit" [disabled]="registerForm.invalid">რეგისტრაცია</button>
+
+  <p *ngIf="registrationError" style="color:red;">
+    ეს Username უკვე არსებობს!
+  </p>
+
+  <p>უკვე გაქვს ანგარიში? <button type="button" routerLink="/login">ავტორიზაცია</button></p>
+
+</form>

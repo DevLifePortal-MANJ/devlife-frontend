@@ -1,0 +1,12 @@
+<div class="dashboard" *ngIf="user">
+  <h1>გამარჯობა {{ user.firstName }}!</h1>
+  <p>{{ welcomeMessage }}</p>
+  <blockquote>
+    <p>დღის ჰოროსკოპი: <em>{{ dailyHoroscope }}</em></p>
+  </blockquote>
+  <p>ბედნიერი ტექნოლოგია: <strong>{{ luckyTech }}</strong></p>
+  <p>ქულები: <strong>{{ points }}</strong></p>
+
+  <app-gif></app-gif>
+
+</div>
