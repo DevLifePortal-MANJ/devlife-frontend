@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../../core/services/user';
+import { User, TechStack, ExperienceLevel } from '../../../core/models/user';
 
 @Component({
   selector: 'app-register',
@@ -35,12 +36,12 @@ export class Register {
 
     const formValue = this.registerForm.value;
 
-    const userPayload = {
+    const userPayload: User = {
       username: formValue.username,
       firstName: formValue.firstName,
       lastName: formValue.lastName,
       birthDate: formValue.birthDate,
-      techStack: formValue.techStack,
+      techStack: this.mapTechStack(formValue.techStack),
       experienceLevel: this.mapExperienceLevel(formValue.experience),
     };
 
@@ -58,12 +59,23 @@ export class Register {
     });
   }
 
-  private mapExperienceLevel(exp: string): number {
+  private mapTechStack(stack: string): TechStack {
+    switch (stack) {
+      case 'React': return TechStack.React;
+      case 'Angular': return TechStack.Angular;
+      case 'Vue': return TechStack.Vue;
+      case '.NET': return TechStack.Net;
+      case 'Python': return TechStack.Python;
+      default: return TechStack.React;
+    }
+  }
+
+  private mapExperienceLevel(exp: string): ExperienceLevel {
     switch (exp) {
-      case 'Junior': return 0;
-      case 'Middle': return 1;
-      case 'Senior': return 2;
-      default: return 0;
+      case 'Junior': return ExperienceLevel.Junior;
+      case 'Middle': return ExperienceLevel.Middle;
+      case 'Senior': return ExperienceLevel.Senior;
+      default: return ExperienceLevel.Junior;
     }
   }
 }

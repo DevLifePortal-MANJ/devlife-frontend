@@ -5,5 +5,6 @@ export interface Challenge {
   level: ExperienceLevel;
   task: string;
   roasts: string[];
+  praises: string[];
 }
 

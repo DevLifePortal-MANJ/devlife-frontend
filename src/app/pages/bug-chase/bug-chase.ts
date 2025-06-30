@@ -43,6 +43,8 @@ export class BugChase implements OnInit {
     this.canvas.width = 600;
     this.canvas.height = 200;
     this.ctx = this.canvas.getContext('2d')!;
+    this.canvas.focus(); // ✅ focus for key events
+
     this.spawnObstacle();
     this.setupKeyboard();
     this.gameLoop();
@@ -105,23 +107,21 @@ export class BugChase implements OnInit {
   }
 
   spawnObstacle(): void {
-  const isFlying = Math.random() < 0.5;
+    const isFlying = Math.random() < 0.5;
+    const y = isFlying ? 160 : 100;
+    const height = 30;
+    const width = 30;
+    const types = isFlying ? ['🐛', '📅'] : ['📅', '💀', '🐞'];
+    const type = types[Math.floor(Math.random() * types.length)];
 
-  const y = isFlying ? 160 : 100;  
-  const height = 30;
-  const width = 30;
-  const types = isFlying ? ['🐛', '📅'] : ['📅', '💀', '🐞'];
-  const type = types[Math.floor(Math.random() * types.length)];
-
-  this.obstacles.push({
-    x: this.canvas.width,
-    y,
-    width,
-    height,
-    type
-  });
-}
-
+    this.obstacles.push({
+      x: this.canvas.width,
+      y,
+      width,
+      height,
+      type
+    });
+  }
 
   drawCharacter(): void {
     this.ctx.font = '50px Segoe UI Emoji';

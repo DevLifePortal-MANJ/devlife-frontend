@@ -1,5 +1,5 @@
 .casino-container {
-  max-width: 800px;
+  width: 600px;
   margin: 3rem auto;
   padding: 2rem;
   background: linear-gradient(145deg, #1e293b, #111827);
@@ -73,4 +73,10 @@ button {
 
 button:hover {
   background-color: #475569;
+}
+
+@media(max-width:700px){
+  .casino-container {
+      width: 300px;
+    }
 }

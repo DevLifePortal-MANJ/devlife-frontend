@@ -8,7 +8,7 @@
     <option value="female">მდედრობითი</option>
   </select>
 
-  <p>პრეფერენცია:</p>
+  <p>დაინტერესებული ვარ:</p>
   <select [(ngModel)]="preference">
     <option value="">არჩევა</option>
     <option value="male">მამრობითი</option>
@@ -32,16 +32,16 @@
     (mousedown)="handleSwipe($event)"
     (touchstart)="handleSwipe($event)"
   >
-    <h3>{{ profiles[currentIndex].name }}</h3>
-    <p>{{ profiles[currentIndex].stack }}</p>
-    <p>{{ profiles[currentIndex].gender === 'male' ? '👨‍💻' : '👩‍💻' }}</p>
+    <h3>{{ currentProfile?.name }}</h3>
+    <p>{{ currentProfile?.stack }}</p>
+    <p>{{ currentProfile?.gender === 'male' ? '👨‍💻' : '👩‍💻' }}</p>
   </div>
 
-  <p style="margin-top: 1rem; color: #94a3b8;">👉 swipe მარჯვნივ მოსწონს, მარცხნივ გაათავისუფლე</p>
+  <p style="margin-top: 1rem; color: #94a3b8;">👉 swipe მარჯვნივ მოსწონს, მარცხნივ არ მომწონს</p>
 </div>
 
 <div *ngIf="step === 'chat'">
-  <h3>💬 {{ likedProfile.name }}-თან ჩატი</h3>
+  <h3>💬 {{ likedProfile?.name }}-თან ჩატი</h3>
   <div style="height: 200px; overflow-y: auto; background: #1e293b; padding: 1rem; border-radius: 10px; margin-bottom: 1rem;">
     <p *ngFor="let msg of chatHistory">{{ msg }}</p>
   </div>
